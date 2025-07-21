@@ -74,7 +74,7 @@ jobs:
         EOF
 
     - name: Prebuild project
-      run: expo prebuild --platform android --clear
+      run: npx expo prebuild --platform android --clear
 
     - name: Build debug APK
       run: eas build --platform android --profile debug --local --output ./KickLiteApp-debug.apk
