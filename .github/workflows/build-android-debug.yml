@@ -117,7 +117,7 @@ jobs:
       run: npx expo prebuild --platform android
 
     - name: Build debug APK
-      run: eas build --platform android --profile debug --local --output ./KickLiteApp-debug.apk
+      run: eas build --platform android --profile development
       env:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
 
