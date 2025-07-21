@@ -73,6 +73,43 @@ jobs:
         }
         EOF
 
+      - name: Initialize Expo project
+        run: |
+        if [ ! -f "app.json" ] && [ ! -f "app.config.js" ]; then
+          cat > app.json << 'EOF'
+        {
+          "expo": {
+            "name": "KickLiteApp",
+            "slug": "kickliteapp",
+            "version": "1.0.0",
+            "orientation": "portrait",
+            "icon": "./assets/icon.png",
+            "userInterfaceStyle": "light",
+            "splash": {
+              "image": "./assets/splash.png",
+              "resizeMode": "contain",
+              "backgroundColor": "#ffffff"
+            },
+            "assetBundlePatterns": [
+              "**/*"
+            ],
+            "ios": {
+              "supportsTablet": true
+            },
+            "android": {
+              "adaptiveIcon": {
+                "foregroundImage": "./assets/adaptive-icon.png",
+                "backgroundColor": "#ffffff"
+              }
+            },
+            "web": {
+              "favicon": "./assets/favicon.png"
+            }
+          }
+        }
+        EOF
+        fi
+
     - name: Prebuild project
       run: npx expo prebuild --platform android
 
