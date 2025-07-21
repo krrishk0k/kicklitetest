@@ -59,15 +59,15 @@ jobs:
       run: npx expo prebuild --platform android
 
     - name: Build debug APK
-      run: eas build --platform android --profile development --non-interactive
+      run: eas build --platform android --profile preview --non-interactive
       env:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
 
     - name: Upload APK artifact
       uses: actions/upload-artifact@v4
       with:
-        name: KickLiteApp-debug-apk
-        path: ./KickLiteApp-debug.apk
+        name: kicklitetest-preview-apk
+        path: ./kicklitetest-preview.apk
         retention-days: 30
 
     - name: Upload APK to release (if main branch)
@@ -81,7 +81,7 @@ jobs:
           
           **Changes:**
           ${{ github.event.head_commit.message }}
-        files: ./KickLiteApp-debug.apk
+        files: ./kicklitetest-preview.apk
         prerelease: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
