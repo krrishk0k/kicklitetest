@@ -51,12 +51,12 @@ jobs:
 
     - name: build appconfig
       run: eas init
+
+    - name: Initialize Expo project
+      run: eas build:configure
       
     - name: build esa config
       run: eas build --platform android --profile development
-      
-    - name: Initialize Expo project
-      run: eas build:configure
       
     - name: Prebuild project
       run: npx expo prebuild --platform android
