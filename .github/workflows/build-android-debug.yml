@@ -53,7 +53,7 @@ jobs:
       run: eas init --id a018f020-5a95-4fe8-88ce-4bde1fb32f14 --non-interactive
 
     - name: Initialize Expo project
-      run: eas build:configure --platform android --non-interactive
+      run: yes | eas build:configure --platform android eas build:configure 
       
     - name: Prebuild project
       run: npx expo prebuild --platform android
