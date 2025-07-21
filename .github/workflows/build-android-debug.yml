@@ -45,7 +45,6 @@ jobs:
         eas whoami
       env:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-
     - name: Create EAS Build Configuration
       run: |
         cat > eas.json << 'EOF'
@@ -72,9 +71,8 @@ jobs:
           }
         }
         EOF
-
-      - name: Initialize Expo project
-        run: |
+    - name: Initialize Expo project
+      run: |
         if [ ! -f "app.json" ] && [ ! -f "app.config.js" ]; then
           cat > app.json << 'EOF'
         {
