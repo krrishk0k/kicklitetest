@@ -52,6 +52,9 @@ jobs:
     - name: build esa config
       run: eas build --platform android --profile development
       
+    - name: eas config
+      run: eas init
+      
     - name: Initialize Expo project
       run: |
         if [ ! -f "app.json" ] && [ ! -f "app.config.js" ]; then
