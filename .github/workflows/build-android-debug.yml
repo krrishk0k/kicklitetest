@@ -50,7 +50,8 @@ jobs:
         cat > eas.json << 'EOF'
         {
           "cli": {
-            "version": ">= 5.2.0"
+            "version": ">= 5.2.0",
+            "appVersionSource": "remote"
           },
           "build": {
             "debug": {
