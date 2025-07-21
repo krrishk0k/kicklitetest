@@ -50,7 +50,7 @@ jobs:
       run: npx expo install expo-dev-client
 
     - name: build appconfig
-      run: eas init
+      run: eas init --id a018f020-5a95-4fe8-88ce-4bde1fb32f14 --non-interactive
 
     - name: Initialize Expo project
       run: eas build:configure
