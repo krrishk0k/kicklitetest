@@ -53,10 +53,10 @@ jobs:
       run: eas init --id a018f020-5a95-4fe8-88ce-4bde1fb32f14 --non-interactive
 
     - name: Initialize Expo project
-      run: yes | eas build:configure --platform android
+      run: yes | eas build:configure --platform android --profile development
       
     - name: Prebuild project
-      run: npx expo prebuild --platform android
+      run: npx expo prebuild --platform android --profile development
 
     - name: Build debug APK
       run: eas build --platform android --profile development --non-interactive
