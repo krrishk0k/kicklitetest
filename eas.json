@@ -4,19 +4,15 @@
       "developmentClient": true,
       "distribution": "internal",
       "android": {
-        // Add or ensure this line is present:
         "gradleCommand": ":app:assembleDebug",
-        // This flag tells EAS not to require explicit signing credentials
-        // for this profile. Crucial for non-interactive debug builds.
-        "credentialsSource": "local" // or "remote" but "local" for debug often
+        "withoutCredentials": true 
       }
     },
     "preview": {
       "distribution": "internal",
       "android": {
-        // For a preview build, you might still want a debuggable release APK
-        "gradleCommand": ":app:assembleRelease", // This creates a release-signed APK but using debug key if "credentialsSource": "local"
-        "credentialsSource": "local" // Often suitable for preview too
+        "gradleCommand": ":app:assembleRelease",
+        "withoutCredentials": true 
       }
     },
     "production": {}
