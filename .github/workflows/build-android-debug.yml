@@ -56,7 +56,7 @@ jobs:
       run: yes | eas build:configure --platform android 
       
     - name: Prebuild project
-      run: npx expo prebuild --platform android --profile development
+      run: npx expo prebuild --platform android
 
     - name: Build debug APK
       run: eas build --platform android --profile development --non-interactive
