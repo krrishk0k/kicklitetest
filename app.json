@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "krrishkapk",
-    "slug": "kickliteapp",
-    "owner": "krrishkapk",
+    "name": "krrishkapkk",
+    "slug": "kicktestlite",
+    "owner": "krrishkapkk",
     "version": "1.0.0",
     "web": {
       "favicon": "./assets/favicon.png"
@@ -38,7 +38,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "a018f020-5a95-4fe8-88ce-4bde1fb32f14"
+        "projectId": "65e297da-a64f-4f23-82b9-6d05613f3024"
       }
     }
   }
