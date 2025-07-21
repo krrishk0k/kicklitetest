@@ -45,11 +45,12 @@ jobs:
         eas whoami
       env:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-    - name: build esa config
-      run: eas build --platform android --profile development
         
     - name: install expo dev client
       run: npx expo install expo-dev-client
+      
+    - name: build esa config
+      run: eas build --platform android --profile development
       
     - name: Initialize Expo project
       run: |
