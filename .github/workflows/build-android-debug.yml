@@ -48,12 +48,12 @@ jobs:
         
     - name: install expo dev client
       run: npx expo install expo-dev-client
+
+    - name: build appconfig
+      run: eas init
       
     - name: build esa config
       run: eas build --platform android --profile development
-      
-    - name: eas config
-      run: eas init
       
     - name: Initialize Expo project
       run: |
