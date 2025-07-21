@@ -49,9 +49,6 @@ jobs:
     - name: install expo dev client
       run: npx expo install expo-dev-client
 
-    - name: build appconfig
-      run: eas init --id 65e297da-a64f-4f23-82b9-6d05613f3024 --non-interactive
-
     - name: Initialize Expo project
       run: yes | eas build:configure --platform android 
       
