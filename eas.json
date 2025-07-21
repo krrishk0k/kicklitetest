@@ -7,13 +7,16 @@
     "preview": {
       "distribution": "internal",
       "android": {
-        "buildType": "apk" 
+        "buildType": "apk" // Keep this for easy sideloading if you prefer APKs
+        // Make sure there is NO "credentialsSource" line here for preview
       }
     },
     "production": {
       "autoIncrement": true,
       "android": {
         "buildType": "app-bundle",
+        "credentialsSource": "local" // ONLY if you specifically want to use your OWN production keys for production builds
+        // If you want Expo to manage your production keys, you would also remove this line from 'production'
       }
     }
   },
