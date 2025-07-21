@@ -45,33 +45,8 @@ jobs:
         eas whoami
       env:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-    - name: Create EAS Build Configuration
-      run: |
-        cat > eas.json << 'EOF'
-        {
-          "cli": {
-            "version": ">= 5.2.0",
-            "appVersionSource": "remote"
-          },
-          "build": {
-            "debug": {
-              "android": {
-                "buildType": "apk",
-                "gradleCommand": ":app:assembleDebug"
-              }
-            },
-            "preview": {
-              "android": {
-                "buildType": "apk"
-              }
-            },
-            "production": {}
-          },
-          "submit": {
-            "production": {}
-          }
-        }
-        EOF
+    - name: build esa config
+      run: eas build --platform android --profile development
         
     - name: install expo dev client
       run: npx expo install expo-dev-client
