@@ -2,6 +2,7 @@
   "expo": {
     "name": "krrishkapk",
     "slug": "kickliteapp",
+    "owner": "krrishkapk",
     "version": "1.0.0",
     "web": {
       "favicon": "./assets/favicon.png"
