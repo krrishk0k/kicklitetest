@@ -56,7 +56,7 @@ jobs:
       run: npx expo prebuild --platform android
 
     - name: Build debug APK
-      run: eas build --platform android --profile preview
+      run: yes | eas build --platform android --profile preview
       env:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
 
