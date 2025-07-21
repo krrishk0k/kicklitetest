@@ -15,24 +15,34 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: 16
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Upgrade react-native (if needed)
+        run: npm install react-native@0.76.9
 
       - name: Install Expo CLI
         run: npm install -g expo-cli
 
-      - name: Build APK (unsigned debug)
+      - name: Validate Expo project
+        run: expo doctor
+
+      - name: Build unsigned APK
         env:
           EXPO_NO_SEND_TO_REMOTE: 1
         run: expo build:android -t apk --no-wait
-
-      - name: Download build artifact
-        # If you are using eas build or expo build, you might need to fetch build URL via API or Expo CLI
-        run: echo "Retrieve the APK download link manually or using Expo’s services"
