@@ -2,19 +2,22 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal",
-      "android": {
-        "gradleCommand": ":app:assembleDebug",
-        "withoutCredentials": true 
-      }
+      "distribution": "internal"
     },
     "preview": {
       "distribution": "internal",
       "android": {
-        "gradleCommand": ":app:assembleRelease",
-        "withoutCredentials": true 
+        "buildType": "apk" 
       }
     },
+    "production": {
+      "autoIncrement": true,
+      "android": {
+        "buildType": "app-bundle",
+      }
+    }
+  },
+  "submit": {
     "production": {}
   }
 }
