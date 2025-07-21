@@ -72,6 +72,10 @@ jobs:
           }
         }
         EOF
+        
+    - name: install expo dev client
+      run: npx expo install expo-dev-client
+      
     - name: Initialize Expo project
       run: |
         if [ ! -f "app.json" ] && [ ! -f "app.config.js" ]; then
